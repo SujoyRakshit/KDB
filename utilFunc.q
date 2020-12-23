@@ -27,3 +27,7 @@ fPallindrone:{ x~reverse x};
 / y-> List of elements to split the string
 / eg fSplit[;"oj"] each ("enjoy";"1o99")
 fSplit:{("* ";y)0: x}/
+
+/ Use .Q.t to get all types Null and Empty
+/ Ignore the blanks at 1st and 3rd position
+fgetType:(!/) flip raze {((x;x$"");(x;x$()))} each upper except[.Q.t;" "];

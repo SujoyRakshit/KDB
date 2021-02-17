@@ -31,3 +31,8 @@ fSplit:{("* ";y)0: x}/
 / Use .Q.t to get all types Null and Empty
 / Ignore the blanks at 1st and 3rd position
 fgetType:(!/) flip raze {((x;x$"");(x;x$()))} each upper except[.Q.t;" "];
+
+/Prime number
+/ Exits as soon as a number is divisible by any number between 2-x
+/ {x,.Q.ts[fprime;enlist x]} each til 500 
+fPrime:{if[x within 1 3;:1b]; x~{x+1}/ [{0<y mod x}[;x];2]};

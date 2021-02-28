@@ -16,7 +16,7 @@ k)dpftscn:{[d;p;f;t;s;c;n]
     a:-2!'.Q.V t; 
     a[f]:`p; 
     r:+enxs[$;d;;s]`. . `\:t; 
-    .q.peach[{[d;t;i;c;f;a;x] .q.set[(.q.sv[`;(d;x)],c);  .[#;(a[x];s:t[x] i);s]]} [d:par[d;p;n];r;i;c;f;a;];[!r]];
+    .q.peach[{[d;t;i;c;f;a;x] .q.set[(.q.sv[`;(d;x)],c);  .[#;(a[x];t[x] i);t[x] i]]} [d:par[d;p;n];r;i;c;f;a;];[!r]];
     @[d;`.d;:;f,r@&~f=r:!r];n};
     
 / Params:

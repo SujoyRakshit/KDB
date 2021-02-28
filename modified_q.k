@@ -27,7 +27,6 @@ k)dpftscn:{[d;p;f;t;s;c;n]
 / s -> Enumeration domain (default to sym)
 / c -> Compression parameters
 / n -> Table name to be saved as, older version we can only save the table with the same name
-/ a -> Attribute to be applied on f (default to `p#)
 / eg: .Q.dpftcn[`:.;2021.01.05;`sym;`t;17 2 5;`tab]
 
 k)dpftcn:dpftscn[;;;;`sym;;];

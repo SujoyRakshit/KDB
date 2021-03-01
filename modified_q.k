@@ -17,7 +17,8 @@ k)dpftscn:{[d;p;f;t;s;c;n]
     a[f]:`p; 
     r:+enxs[$;d;;s]`. . `\:t; 
     .q.peach[{[d;t;i;c;f;a;x] .q.set[(.q.sv[`;(d;x)],c);  .[#;(a[x];t[x] i);t[x] i]]} [d:par[d;p;n];r;i;c;f;a;];[!r]];
-    @[d;`.d;:;f,r@&~f=r:!r];n};
+    @[d;`.d;:;f,r@&~f=r:!r];
+    n};
     
 / Params:
 / d -> Directory
@@ -53,7 +54,7 @@ k)dpftsnAppend:{[d;p;f;t;s;n] r:+enxs[$;d;;s]`. . `\:t; .q.peach[{[d;t;x] .q.ups
 / c -> Compression parameters (Used for the first time save, post upserts do not require compression parameter)
 / n -> Table name to be saved as, older version we can only save the table with the same name
 
-k)dpftscnAppend:{[d;p;f;t;s;c;n] path:!par[d;p;n]; $[()~path;dpftscna[d;p;f;t;s;c;n;::];dpftsnAppend[d;p;f;t;s;n]]};
+k)dpftscnAppend:{[d;p;f;t;s;c;n] path:!par[d;p;n]; $[()~path;dpftscn[d;p;f;t;s;c;n];dpftsnAppend[d;p;f;t;s;n]]};
 
 / We do not apply attribute to f (as we pass :: to .Q.dpftscna) because,
 / If a column has attribute, the entire column is copied in memory and then appended, on disk. Thus, the compression will be lost on the column, if attribute exists on the field.

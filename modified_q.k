@@ -1,7 +1,10 @@
 \d .Q
 
 / Modified version of .Q.dpft(s), which uses peach to save the columns on disk
-/ Post Enumeration all columns are free to be stored in parallel on disk
+/ Features:
+/ 1. All columns can be stored in parallel on disk
+/ 2. Uses compression to be stored on disk
+/ 3. We can save the table with a different name on disk
 / Params:
 / d -> Directory
 / p -> Partition
@@ -43,7 +46,12 @@ k)dpftcn:dpftscn[;;;;`sym;;];
 
 k)dpftsnAppend:{[d;p;f;t;s;n] r:+enxs[$;d;;s]`. . `\:t; .q.peach[{[d;t;x] .q.upsert[.q.sv[`;(d;x)];t[x]]} [d:par[d;p;n];r;];[!r]];@[d;`.d;:;f,r@&~f=r:!r];n};
 
-/ If the data does not exist, will set it first time for compression
+/ Another version of .Q.dpft(s), which uses peach to Append data on disk
+/ Features:
+/ 1. All columns can be stored in parallel on disk
+/ 2. Uses compression to be stored on disk
+/ 3. We can save the table with a different name on disk
+/ If the data does not exist, will set it first time for compression to work
 / Post first time, the data will be appended
 / Params:
 / d -> Directory

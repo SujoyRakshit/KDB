@@ -1,0 +1,4 @@
+jobId,jobQuery,jobDescription,jobParams,jobTime,jobDays,active
+getHKData,"?[`t;enlist (=;`loc;enlist `HKH);0b;();10]","Gets Hong Kong Data",,08:00:00.000,(2;3;4;5;6),1
+computeSum,"sum","Calculates sum of 2 parameters","(3;4)",07:00:00.000,(2),1
+getTradeData,"?[`t;();0b;()]","Gets Trade Data",,08:00:00.000,(6),1

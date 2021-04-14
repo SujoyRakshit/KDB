@@ -9,9 +9,6 @@ system"l ",first configDict[`schema];
 / init schema and sync up from log file
 .u.rep:{(.[;();:;].)each x;if[null first y;:()];-11!y};
 
-/ connect to ticker plant for (schema;(logcount;log))
-.u.rep .(hopen `$"::",first configDict[`tpPort])"(.u.sub[`;`];`.u `i`L)";
-
 init:{
     .u.rep .(hopen `$"::",first configDict[`tpPort])"(.u.sub[`;`];`.u `i`L)";
     .jobs.jobScheduler'[.jobs.jobsFromConfig];

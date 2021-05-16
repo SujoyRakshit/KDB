@@ -16,7 +16,7 @@
 
 k)dpftscn:{[d;p;f;t;s;c;n] 
     i:<t f; 
-    a:-2!'.Q.V t; 
+    a:.q.peach[.q.attr;.Q.V t]; 
     a[f]:`p; 
     r:+enxs[$;d;;s]`. . `\:t; 
     .q.peach[{[d;t;i;c;f;a;x] .q.set[(.q.sv[`;(d;x)],c);  .[#;(a[x];t[x] i);t[x] i]]} [d:par[d;p;n];r;i;c;f;a;];[!r]];
@@ -34,6 +34,11 @@ k)dpftscn:{[d;p;f;t;s;c;n]
 / eg: .Q.dpftcn[`:.;2021.01.05;`sym;`t;17 2 5;`tab]
 
 k)dpftcn:dpftscn[;;;;`sym;;];
+
+/ .Q.dpftc
+/ eg: .Q.dpftc[`:.;2021.01.05;`sym;`t;17 2 5]
+
+k)dpftc:{[d;p;f;t;c] dpftscn[d;p;f;t;`sym;c;t]};
 
 / Appends data on disk to the table
 / Params:

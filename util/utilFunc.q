@@ -33,6 +33,4 @@ fSplit:{("* ";y)0: x}/
 fgetType:(!/) flip raze {((x;x$"");(x;x$()))} each upper except[.Q.t;" "];
 
 /Prime number
-/ Exits as soon as a number is divisible by any number between 2-x
-/ {x,.Q.ts[fprime;enlist x]} each til 500 
-fPrime:{if[x within 1 3;:1b]; x~{x+1}/ [{0<y mod x}[;x];2]};
+fPrime:{a where 2=sum flip 0=a mod\: a:til x};

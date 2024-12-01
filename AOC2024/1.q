@@ -4,5 +4,5 @@ f:sum abs(-/) ::;
 
 //Part 2
 f1:{sum x[0]*(sum')(=\:). x} //Slower
-f1:{sum d*(!)d:(#:')(=)x[1](&)(in) .(|:)x}; //Faster
+f1:{sum x[1](&)(in) .(|:)x}; //Faster
 

@@ -11,7 +11,7 @@ getTimes:{
 genUniqTime:{
   data:?[x;enlist (=;`id;y);0b;()];
   if[1=count data;:select id,startTime:st,endTime:et from data];
-  ?[;();0b;{x!x} `id`startTime`endTime] ?[;();{x!x} `id`startTime`endTime;()] getTimes/ [update startTime:0Nt,endTime:0Nt from data;data]
+  `id`startTime`endTime#0!?[;();{x!x} `id`startTime`endTime;()] getTimes/ [update startTime:0Nt,endTime:0Nt from data;data]
  };
 
 getSessionTime:{

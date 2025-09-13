@@ -3,7 +3,7 @@ session:([] id:1 2 1 2 2 3; sid:1 1 2 2 3 1; st:`time$01:00 01:00 01:30 01:45 01
 // Update unique start times and end time 
 getTimes:{
   a:(`startTime`endTime)!((?;(null;`startTime);(min;`st);`startTime);(?;(null;`endTime);(max;`et);`endTime));
-  b:{x!x} enlist `id; 
+  b:0b; 
   c:enlist (&;(>=;`st;y`st);(<=;`et;y`et));
   ![x;c;b;a]
  };
